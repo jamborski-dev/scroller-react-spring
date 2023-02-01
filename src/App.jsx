@@ -4,6 +4,7 @@ import { useSpring, animated as a, to } from "react-spring"
 import useWindowScroll from "@react-hook/window-scroll"
 import useScrollWidth from "./useScrollWidth"
 
+import { Nav } from "./Nav"
 import { Section } from "./Section"
 
 function ScrollCarousel({ children }) {
@@ -42,24 +43,27 @@ function ScrollCarousel({ children }) {
 
 export default function App() {
   return (
-    <div className="container">
-      <ScrollCarousel>
-        <div className="box">
-          <div className="hero">
-            <h1>Hero</h1>
-            <div>Use vertical scroll to move the content ⥟</div>
+    <>
+      <Nav />
+      <div className="container">
+        <ScrollCarousel>
+          <div className="box">
+            <div className="hero">
+              <h1>Hero</h1>
+              <div>Use vertical scroll to move the content ⥟</div>
+            </div>
           </div>
-        </div>
-        <div className="box">
-          <Section index={1} />
-        </div>
-        <div className="box">
-          <Section index={2} />
-        </div>
-        <div className="box">
-          <Section index={3} />
-        </div>
-      </ScrollCarousel>
-    </div>
+          <div className="box">
+            <Section index={1} />
+          </div>
+          <div className="box">
+            <Section index={2} />
+          </div>
+          <div className="box">
+            <Section index={3} />
+          </div>
+        </ScrollCarousel>
+      </div>
+    </>
   )
 }
